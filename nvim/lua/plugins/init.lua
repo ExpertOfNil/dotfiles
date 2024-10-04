@@ -19,7 +19,11 @@ return {
 	{ "ThePrimeagen/harpoon" },
 
 	-- undotree
-	{ "mbbill/undotree" },
+	{ "mbbill/undotree",
+        config = function()
+            vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+        end,
+    },
 
 	-- fugitive
 	{ "tpope/vim-fugitive" },
