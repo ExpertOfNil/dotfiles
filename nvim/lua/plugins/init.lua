@@ -33,4 +33,7 @@ return {
 
 	-- lightline
 	{ "itchyny/lightline.vim" },
+
+	-- oil
+	{ "stevearc/oil.nvim" },
 }

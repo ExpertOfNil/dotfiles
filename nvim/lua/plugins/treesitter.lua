@@ -14,11 +14,13 @@ return {
 				"lua",
 				"markdown",
 				"markdown_inline",
+                "odin",
 				"proto",
 				"python",
 				"query",
 				"rust",
 				"vim",
+                "zig",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -36,6 +36,7 @@ return {
                 "clangd",
                 "rust_analyzer",
                 "zls",
+                "ols",
             },
             handlers = {
                 function(server_name)
@@ -53,6 +54,13 @@ return {
                                 checkOnSave = { command = "clippy" },
                             }
                         }
+                    }
+                end,
+                ["ols"] = function()
+                    nvim_lsp.ols.setup {
+                        on_attach = function(client, bufnr)
+                            print('ols running...')
+                        end,
                     }
                 end
             }
