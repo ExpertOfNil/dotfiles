@@ -4,7 +4,7 @@ config.color_scheme = 'Tokyo Night'
 config.initial_cols = 106
 config.initial_rows = 32
 
-config.font = wezterm.font('Iosevka', { weight = 'Regular' })
+config.font = wezterm.font('IosevkaTermNerdFontMono', { weight = 'Regular' })
 config.leader = { key = 'b', mods = 'CTRL' }
 config.keys = {
     {

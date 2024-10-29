@@ -29,6 +29,12 @@ return {
             cmp_lsp.default_capabilities()
         )
 
+        nvim_lsp.ols.setup({
+            on_attach = function()
+                print("ols running...")
+            end
+        })
+
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = {
@@ -56,13 +62,6 @@ return {
                         }
                     }
                 end,
-                ["ols"] = function()
-                    nvim_lsp.ols.setup {
-                        on_attach = function(client, bufnr)
-                            print('ols running...')
-                        end,
-                    }
-                end
             }
         })
 
