@@ -36,4 +36,12 @@ return {
 
 	-- oil
 	{ "stevearc/oil.nvim" },
+
+    -- vimtex
+    { "lervag/vimtex",
+        lazy = false,
+        init = function()
+            vim.vimtex_view_method = "zathura"
+        end
+    },
 }

@@ -8,6 +8,7 @@ return {
     	        "bash",
     	        "c",
 				"cmake",
+                "glsl",
 				"html",
 				"javascript",
 				"json",
@@ -45,5 +46,6 @@ return {
                 additional_vim_regex_highlighting = { "markdown" },
             },
         })
+        vim.treesitter.language.register('glsl', {'fs', 'vs'})
 	end
 }
