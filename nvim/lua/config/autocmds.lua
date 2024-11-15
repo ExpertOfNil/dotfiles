@@ -41,3 +41,10 @@ autocmd('LspAttach', {
         vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
     end
 })
+
+autocmd({"BufNewFile", "BufRead"}, {
+    pattern = "*.wgsl",
+    callback = function()
+        vim.bo.filetype = "wgsl"
+    end,
+})

@@ -22,6 +22,7 @@ return {
 				"rust",
 				"vim",
                 "zig",
+                "wgsl",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)

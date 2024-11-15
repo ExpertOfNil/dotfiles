@@ -35,6 +35,8 @@ return {
             end
         })
 
+        nvim_lsp.wgsl_analyzer.setup({})
+
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = {
@@ -43,6 +45,7 @@ return {
                 "rust_analyzer",
                 "zls",
                 "ols",
+                "wgsl_analyzer",
             },
             handlers = {
                 function(server_name)
