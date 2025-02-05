@@ -3,9 +3,10 @@ local config = wezterm.config_builder()
 config.color_scheme = 'Tokyo Night'
 config.initial_cols = 106
 config.initial_rows = 32
+config.enable_wayland = false
 
 config.font = wezterm.font('IosevkaTermNerdFontMono', { weight = 'Regular' })
-config.leader = { key = 'b', mods = 'CTRL' }
+config.leader = { key = 'b', mods = 'WIN' }
 config.keys = {
     {
         key = 'c',
