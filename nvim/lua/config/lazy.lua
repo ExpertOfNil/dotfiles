@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_transparent = true
 vim.g.netrw_browse_split = 0
