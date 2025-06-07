@@ -8,53 +8,68 @@ config.enable_wayland = false
 config.font = wezterm.font('IosevkaTermNerdFontMono', { weight = 'Regular' })
 config.leader = { key = 'b', mods = 'WIN' }
 config.keys = {
+    --{
+    --    key = 'c',
+    --    mods = 'LEADER',
+    --    action = wezterm.action.SpawnTab "CurrentPaneDomain"
+    --},
     {
-        key = 'c',
-        mods = 'LEADER',
+        key = 't',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.SpawnTab "CurrentPaneDomain"
     },
     {
+        key = 'Tab',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivateTabRelative(1),
+    },
+    {
         key = '1',
-        mods = 'LEADER',
+        mods = 'ALT',
         action = wezterm.action.ActivateTab(0)
     },
     {
         key = '2',
-        mods = 'LEADER',
+        mods = 'ALT',
         action = wezterm.action.ActivateTab(1)
     },
     {
         key = '3',
-        mods = 'LEADER',
+        mods = 'ALT',
         action = wezterm.action.ActivateTab(2)
     },
     {
         key = '4',
-        mods = 'LEADER',
+        mods = 'ALT',
         action = wezterm.action.ActivateTab(3)
     },
     {
         key = '5',
-        mods = 'LEADER',
+        mods = 'ALT',
         action = wezterm.action.ActivateTab(4)
     },
     {
-        key = 'v',
-        mods = 'LEADER',
+        key = 'j',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.SplitVertical {
             domain = "CurrentPaneDomain"
         }
     },
     {
-        key = 'h',
-        mods = 'LEADER',
+        key = 'l',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.SplitHorizontal {
             domain = "CurrentPaneDomain"
         }
     },
     {
+        key = 's',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivatePaneDirection 'Next'
+    },
+    {
         key = 'y',
-        mods = 'LEADER',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.ActivateCopyMode
     },
 }

@@ -30,3 +30,6 @@ vim.opt.shortmess:append("c")
 
 vim.opt.updatetime = 50
 vim.opt.background = "dark"
+
+--vim.opt.list = true
+--vim.opt.listchars:append({space = "·"})

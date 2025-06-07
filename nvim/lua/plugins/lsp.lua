@@ -29,11 +29,11 @@ return {
             cmp_lsp.default_capabilities()
         )
 
-        nvim_lsp.ols.setup({
-            on_attach = function()
-                print("ols running...")
-            end
-        })
+        --nvim_lsp.ols.setup({
+        --    on_attach = function()
+        --        print("ols running...")
+        --    end
+        --})
 
         nvim_lsp.wgsl_analyzer.setup({})
 
@@ -63,6 +63,24 @@ return {
                                 checkOnSave = { command = "clippy" },
                             }
                         }
+                    }
+                end,
+                ["ols"] = function()
+                    nvim_lsp.ols.setup {
+                        on_attach = function(client, bufnr)
+                            print('ols running...')
+                        end,
+                    }
+                end,
+                ["clangd"] = function()
+                    nvim_lsp.clangd.setup {
+                        on_attach = function(client, bufnr)
+                            print('clangd running...')
+                        end,
+                        cmd = {
+                            "clangd",
+                            "--clang-tidy",
+                        },
                     }
                 end,
             }
