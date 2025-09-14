@@ -60,7 +60,8 @@ return {
                         end,
                         settings = {
                             ["rust-analyzer"] = {
-                                checkOnSave = { command = "clippy" },
+                                checkOnSave = { enable = true },
+                                check = { command = "clippy" },
                             }
                         }
                     }
@@ -80,6 +81,38 @@ return {
                         cmd = {
                             "clangd",
                             "--clang-tidy",
+                        },
+                    }
+                end,
+                --["wgsl_analyzer"] = function()
+                --    nvim_lsp.clangd.setup {
+                --        on_attach = function(client, bufnr)
+                --            print('wgsl-analyzer running...')
+                --        end,
+                --        cmd = {
+                --            "wgsl-analyzer",
+                --        },
+                --    }
+                --end,
+                ["denols"] = function()
+                    nvim_lsp.denols.setup {
+                        on_attach = function(client, bufnr)
+                            print('denols running...')
+                        end,
+                        init_options = {
+                            enable = true,
+                            lint = true,
+                            unstable = true,
+                        },
+                        root_dir = require('lspconfig').util.root_pattern("deno.json", "deno.jsonc"),
+                        suggest = {
+                            imports = {
+                                hosts = {
+                                    ["https://deno.land"] = true,
+                                    ["https://jsr.io"] = true,
+                                    ["https://esm.sh"] = true,
+                                },
+                            },
                         },
                     }
                 end,
