@@ -19,10 +19,14 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = mygroup,
     pattern = "*",
-    command = [[%s/\s\+$//e]],
+    callback = function()
+        local pos = vim.api.nvim_win_get_cursor(0) -- save cursor
+        vim.cmd([[%s/\s\+$//e]])                   -- strip trailing whitespace
+        pcall(vim.api.nvim_win_set_cursor, 0, pos) -- restore cursor
+    end,
 })
 
 autocmd('LspAttach', {
@@ -42,7 +46,7 @@ autocmd('LspAttach', {
     end
 })
 
-autocmd({"BufNewFile", "BufRead"}, {
+autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*.wgsl",
     callback = function()
         vim.bo.filetype = "wgsl"
