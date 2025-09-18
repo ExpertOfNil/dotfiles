@@ -9,7 +9,7 @@ vim.keymap.set("n", "Y", "yg$")
 
 -- copy/paste from clipboard
 -- need to install xclip if using X11
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- vnoremap("<leader>v", "\"+p")
 -- nnoremap("<leader>v", "\"+p")
@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- replaces highlighted text with buffer text
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- scroll half page and center cursor vertically on view
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
